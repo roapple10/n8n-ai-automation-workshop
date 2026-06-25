@@ -1,16 +1,21 @@
 {
   "id": "",
-  "name": "Telegram AI-bot v2",
+  "name": "Telegram AI-bot",
   "nodes": [
     {
       "parameters": {
-        "updates": ["*"],
+        "updates": [
+          "*"
+        ],
         "additionalFields": {}
       },
       "id": "ea71a467-a646-4aca-b72e-cef1249c74e2",
       "name": "Telegram Trigger",
       "type": "n8n-nodes-base.telegramTrigger",
-      "position": [32, 352],
+      "position": [
+        32,
+        352
+      ],
       "webhookId": "",
       "typeVersion": 1,
       "credentials": {
@@ -37,7 +42,10 @@
       "id": "730a51ac-223e-4956-be7f-166eadb6ed81",
       "name": "PreProcessing",
       "type": "n8n-nodes-base.set",
-      "position": [208, 352],
+      "position": [
+        208,
+        352
+      ],
       "typeVersion": 2
     },
     {
@@ -69,7 +77,10 @@
       "id": "2aa961b8-f0af-4d5c-a6af-1be56ea4b2e6",
       "name": "Settings",
       "type": "n8n-nodes-base.set",
-      "position": [384, 352],
+      "position": [
+        384,
+        352
+      ],
       "typeVersion": 2
     },
     {
@@ -81,7 +92,10 @@
       "id": "30321276-ebe1-41ac-b420-9dab8daa405b",
       "name": "Send Typing action",
       "type": "n8n-nodes-base.telegram",
-      "position": [592, 480],
+      "position": [
+        592,
+        480
+      ],
       "typeVersion": 1,
       "credentials": {
         "telegramApi": {
@@ -97,7 +111,10 @@
       "id": "7d7ff2e8-b0ca-4638-a056-f7b4e2e6273d",
       "name": "Merge",
       "type": "n8n-nodes-base.merge",
-      "position": [800, 368],
+      "position": [
+        800,
+        368
+      ],
       "typeVersion": 2.1
     },
     {
@@ -127,7 +144,10 @@
       "id": "1cbe43d4-ea8b-4178-bc10-4bfad7abe143",
       "name": "CheckCommand",
       "type": "n8n-nodes-base.switch",
-      "position": [992, 368],
+      "position": [
+        992,
+        368
+      ],
       "typeVersion": 1
     },
     {
@@ -154,7 +174,10 @@
       "id": "088cffee-5720-488b-a4ec-cfdccbf77e75",
       "name": "Chat_mode",
       "type": "n8n-nodes-base.openAi",
-      "position": [1344, -160],
+      "position": [
+        1344,
+        -160
+      ],
       "typeVersion": 1,
       "credentials": {
         "openAiApi": {
@@ -187,7 +210,10 @@
       "id": "41248697-6474-4a8f-a8b8-038c96465948",
       "name": "Greeting",
       "type": "n8n-nodes-base.openAi",
-      "position": [1344, 80],
+      "position": [
+        1344,
+        80
+      ],
       "typeVersion": 1,
       "credentials": {
         "openAiApi": {
@@ -207,7 +233,10 @@
       "id": "20c2e7fa-5d65-441b-8d1d-a8d46c624964",
       "name": "Text reply",
       "type": "n8n-nodes-base.telegram",
-      "position": [1712, -48],
+      "position": [
+        1712,
+        -48
+      ],
       "typeVersion": 1,
       "credentials": {
         "telegramApi": {
@@ -225,7 +254,10 @@
       "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
       "name": "Send wait message",
       "type": "n8n-nodes-base.telegram",
-      "position": [1200, 368],
+      "position": [
+        1200,
+        368
+      ],
       "typeVersion": 1,
       "credentials": {
         "telegramApi": {
@@ -245,12 +277,17 @@
         "prompt": "={{ $('Settings').first().json.message.text.split(' ').slice(1).join(' ') }}",
         "options": {},
         "images": {
-          "values": [{}]
+          "values": [
+            {}
+          ]
         }
       },
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 2.3,
-      "position": [1440, 368],
+      "position": [
+        1440,
+        368
+      ],
       "id": "1e827a27-7e19-4740-9d73-44b060ffa1e5",
       "name": "Generate an image",
       "credentials": {
@@ -271,7 +308,10 @@
       "id": "125e27d2-b03b-4f02-9dd1-8fc81ecf0b6b",
       "name": "Send image",
       "type": "n8n-nodes-base.telegram",
-      "position": [1712, 368],
+      "position": [
+        1712,
+        368
+      ],
       "typeVersion": 1,
       "credentials": {
         "telegramApi": {
@@ -291,7 +331,10 @@
       "id": "e91d616b-1d5e-40e8-8468-2d0b2dda4cf7",
       "name": "Send error message",
       "type": "n8n-nodes-base.telegram",
-      "position": [1712, 672],
+      "position": [
+        1712,
+        672
+      ],
       "typeVersion": 1,
       "credentials": {
         "telegramApi": {
@@ -309,7 +352,10 @@
       "id": "2d2fe268-1e3e-483b-847c-4412e586c1ca",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
-      "position": [1248, -240],
+      "position": [
+        1248,
+        -240
+      ],
       "typeVersion": 1
     },
     {
@@ -321,7 +367,10 @@
       "id": "09a9c0b4-ac6e-46eb-b2e0-ef2b55e94ada",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
-      "position": [1248, 32],
+      "position": [
+        1248,
+        32
+      ],
       "typeVersion": 1
     },
     {
@@ -333,7 +382,10 @@
       "id": "656bab5e-b7f7-47a1-8e75-4a17d2070290",
       "name": "Sticky Note3",
       "type": "n8n-nodes-base.stickyNote",
-      "position": [1140, 288],
+      "position": [
+        1140,
+        288
+      ],
       "typeVersion": 1
     },
     {
@@ -345,7 +397,10 @@
       "id": "074e907f-634b-4242-b669-33fa064f8472",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
-      "position": [1600, 592],
+      "position": [
+        1600,
+        592
+      ],
       "typeVersion": 1
     },
     {
@@ -358,7 +413,10 @@
       "id": "source-sticky-1934",
       "name": "Source Template",
       "type": "n8n-nodes-base.stickyNote",
-      "position": [-780, 96],
+      "position": [
+        -780,
+        96
+      ],
       "typeVersion": 1
     }
   ],
