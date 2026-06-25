@@ -25,12 +25,26 @@ n8n/
 │       ├── guides/             # General workflow guides
 │       ├── templates/          # Reusable workflow templates
 │       └── ...
-├── template_no_creds/          # Sanitized workflow JSON files (credential-free)
+├── n8n_template/               # Sanitized workflow JSON files (credential-free)
 │   ├── Learn_n8n.json          # Introductory learning workflow
-│   ├── Slack_RAG_bot_v1.json   # Slack RAG bot (version 1)
-│   ├── Slack_RAG_bot_v2.json   # Slack RAG bot (version 2, improved)
-│   ├── Telegram_AI_bot_v1.json # Telegram AI chatbot (version 1)
-│   └── Telegram_AI_bot_v2.json # Telegram AI chatbot (version 2, with image gen)
+│   ├── Slack_practice/         # Slack automation practice workflows
+│   │   ├── 01_slack_weekly_summary.json
+│   │   ├── 02_gmail_ai_classify_slack.json
+│   │   ├── 03_email_ai_agent_slack.json
+│   │   ├── 04_Slack RAG Agent(AI Router + Thinking Ack).json
+│   │   └── Slack Project Update RAG Agent.json
+│   ├── Telegram_practice/      # Telegram bot practice workflows
+│   │   ├── 01_expense_tracker_telegram_sheets.json
+│   │   ├── 02_task_manager_telegram_sheets.json
+│   │   ├── 03_image_generator_dalle_telegram.json
+│   │   ├── 04_content_script_generator_telegram.json
+│   │   └── Telegram AI-bot.json
+│   └── Sample_data/            # Sample CSV / GSheet files for practice
+│       ├── 01_expense_tracker_sample.*
+│       ├── 02_task_manager_sample.*
+│       ├── 03_image_log_sample.*
+│       ├── 04_slack_stars_sample.*
+│       └── 05_job_tracker_sample.*
 ├── docs/                       # Course lecture materials
 │   └── 講義/                   # Session handouts & slides
 ├── CLAUDE.md                   # Claude AI rules for n8n JSON generation
@@ -77,7 +91,7 @@ ngrok http --url=YOUR_NGROK_DOMAIN 5678
 
 ### 4. Import a workflow
 
-Go to n8n → **Workflows → Import from file**, then select any JSON from `template_no_creds/`.  
+Go to n8n → **Workflows → Import from file**, then select any JSON from `n8n_template/`.  
 After import, re-configure the credential nodes in the UI.
 
 ---
@@ -97,13 +111,41 @@ Claude hooks are pre-configured in `.claude/settings.json` to:
 
 ## 📦 Workflow Templates
 
+### General
+
 | File | Description |
 |------|-------------|
 | `Learn_n8n.json` | Beginner workflow covering core n8n concepts |
-| `Slack_RAG_bot_v1.json` | Slack bot with RAG (Retrieval-Augmented Generation) |
-| `Slack_RAG_bot_v2.json` | Improved Slack RAG bot with better error handling |
-| `Telegram_AI_bot_v1.json` | Telegram chatbot powered by AI |
-| `Telegram_AI_bot_v2.json` | Telegram bot with AI image generation support |
+
+### Slack Practice (`Slack_practice/`)
+
+| File | Description |
+|------|-------------|
+| `01_slack_weekly_summary.json` | Auto-generate weekly summaries and post to Slack |
+| `02_gmail_ai_classify_slack.json` | AI classifies Gmail and forwards to Slack channels |
+| `03_email_ai_agent_slack.json` | Email AI agent with Slack notification |
+| `04_Slack RAG Agent(AI Router + Thinking Ack).json` | Slack RAG bot with AI router and thinking acknowledgement |
+| `Slack Project Update RAG Agent.json` | Slack bot for project update RAG queries |
+
+### Telegram Practice (`Telegram_practice/`)
+
+| File | Description |
+|------|-------------|
+| `01_expense_tracker_telegram_sheets.json` | Log expenses via Telegram, sync to Google Sheets |
+| `02_task_manager_telegram_sheets.json` | Manage tasks via Telegram, sync to Google Sheets |
+| `03_image_generator_dalle_telegram.json` | Generate DALL-E images via Telegram bot |
+| `04_content_script_generator_telegram.json` | Generate content scripts via Telegram |
+| `Telegram AI-bot.json` | General-purpose Telegram AI chatbot |
+
+### Sample Data (`Sample_data/`)
+
+| Dataset | Description |
+|---------|-------------|
+| `01_expense_tracker_sample` | Sample expense records |
+| `02_task_manager_sample` | Sample task list |
+| `03_image_log_sample` | Sample image generation log |
+| `04_slack_stars_sample` | Sample Slack starred messages |
+| `05_job_tracker_sample` | Sample job application tracker |
 
 > All templates have credentials removed. You will need to re-link credentials after importing into your n8n instance.
 
